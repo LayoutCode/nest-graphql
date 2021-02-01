@@ -2,7 +2,7 @@ import { IsNotEmpty } from "class-validator";
 import { NewVideo } from "src/graphql";
 
 
-export class videoDTO extends NewVideo {
+export class VideoDTO extends NewVideo {
     @IsNotEmpty()
     title: string;
 
