@@ -40,6 +40,8 @@ $ npm install
 # development
 $ npm run start
 
+$ localhost:3000/graphql 
+
 # watch mode
 $ npm run start:dev
 
