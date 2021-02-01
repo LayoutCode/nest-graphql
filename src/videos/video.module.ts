@@ -5,6 +5,4 @@ import { VideoResolvers } from "./video.resolvers";
 @Module({
     providers: [VideoService, VideoResolvers]
 })
-export class VideoModule {
-
-}
+export class VideoModule {}

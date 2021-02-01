@@ -11,7 +11,7 @@ export class VideoResolvers {
     async videos() {
         return this.videoService.findAll()
     }
-    @Mutation()
+    @Mutation('createVideo')
     async create(@Args('input') args: VideoDTO): Promise<Video>{
         return await this.videoService.create(args);
     }
