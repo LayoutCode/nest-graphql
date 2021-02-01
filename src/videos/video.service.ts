@@ -1,27 +1,26 @@
 import { Injectable } from "@nestjs/common";
 import {User, Video } from "src/graphql";
-// @ts-ignore
-import videoDTO from "./dto/video.dto"
+import { VideoDTO } from "./dto/video.dto"
 
 @Injectable()
-export  class videoService {
+export  class VideoService {
     private readonly videos: Video[] = [];
 
     findAll(): Video[] {
         return this.videos;
     }
 
-    create(videoDTO: videoDTO): Video {
+    create(VideoDTO: VideoDTO): Video {
         const videoID: number = this.videos.length + 1;
         const video: Video = new  Video()
 
         video.id = videoID.toString()
-        video.title = videoDTO.title
-        video.url = videoDTO.url
+        video.title = VideoDTO.title
+        video.url = VideoDTO.url
 
         const author: User = new User();
-        author.id = videoDTO.userID
-        author.name = "Author " + videoDTO.userID;
+        author.id = VideoDTO.userId;
+        author.name = "Author " + VideoDTO.userId;
         video.author = author;
 
         this.videos.push(video)
